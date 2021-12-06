@@ -1,9 +1,6 @@
-//
-//  ReminderDetailViewDataSource.swift
-//  Today
-//
-//  Created by C HUMBERT on 24/11/2021.
-//
+/*
+ See LICENSE folder for this sample's licensing information.
+ */
 
 import UIKit
 
@@ -13,14 +10,14 @@ class ReminderDetailViewDataSource: NSObject {
         case date
         case time
         case notes
-        
+
         static let timeFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateStyle = .none
             formatter.timeStyle = .short
             return formatter
         }()
-        
+
         static let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.timeStyle = .none
@@ -28,7 +25,6 @@ class ReminderDetailViewDataSource: NSObject {
             return formatter
         }()
 
-        
         func displayText(for reminder: Reminder?) -> String? {
             switch self {
             case .title:
@@ -43,7 +39,7 @@ class ReminderDetailViewDataSource: NSObject {
                 return reminder?.notes
             }
         }
-        
+
         var cellImage: UIImage? {
             switch self {
             case .title:
@@ -59,21 +55,20 @@ class ReminderDetailViewDataSource: NSObject {
     }
 
     private var reminder: Reminder
-    
+
     init(reminder: Reminder) {
         self.reminder = reminder
         super.init()
     }
-
 }
 
 extension ReminderDetailViewDataSource: UITableViewDataSource {
     static let reminderDetailCellIdentifier = "ReminderDetailCell"
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ReminderRow.allCases.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Self.reminderDetailCellIdentifier, for: indexPath)
         let row = ReminderRow(rawValue: indexPath.row)

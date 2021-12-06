@@ -1,9 +1,6 @@
-//
-//  AppDelegate.swift
-//  Today
-//
-//  Created by C HUMBERT on 10/11/2021.
-//
+/*
+ See LICENSE folder for this sample's licensing information.
+ */
 
 import UIKit
 

@@ -1,9 +1,6 @@
-//
-//  EditDateCell.swift
-//  Today
-//
-//  Created by C HUMBERT on 26/11/2021.
-//
+/*
+ See LICENSE folder for this sample's licensing information.
+ */
 
 import UIKit
 
@@ -13,5 +10,4 @@ class EditDateCell: UITableViewCell {
     func configure(date: Date) {
         datePicker.date = date
     }
-
 }
